@@ -1,1 +1,1 @@
-web: gunicorn server_pred:lorenheroku
+web: gunicorn server_pred:app
