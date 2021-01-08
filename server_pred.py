@@ -3,6 +3,7 @@ from flask import request
 import pickle
 import pandas as pd
 import json
+import os
 
 app = Flask(__name__)
 
@@ -67,4 +68,9 @@ def get_multiple_predictions():
 
 
 if __name__ == '__main__':
-    app.run()
+    port = os.environ.get('PORT')
+
+    if port:
+        app.run(host='0.0.0.0', port=int(port))
+    else:
+        app.run()
